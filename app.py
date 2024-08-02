@@ -5,7 +5,7 @@ import google.generativeai as genai
 genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
 # @st.cache_data(show_spinner=False)
 def get_gemini_response(input, image):
-    model = genai.GenerativeModel('gemini-pro-vision')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     if input!="":
         response = model.generate_content([input,image, "The story should have a beautiful title related to the context of the story", "A beautiful, insigtful moral lesson should be mentioned at the end of the story"])
     else:
